@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+
+    <style>
+        body{
+            font-variant-caps: all-petite-caps;
+        }
+        
+        div .widget  {
+        width: 95%;
+        min-height: 60px;
+        background:
+            linear-gradient(to right, black 3px, transparent 3px) 0 0,
+            linear-gradient(to right, black 3px, transparent 3px) 0 100%,
+            linear-gradient(to left, black 3px, transparent 3px) 100% 0,
+            linear-gradient(to left, black 3px, transparent 3px) 100% 100%,
+            linear-gradient(to bottom, black 3px, transparent 3px) 0 0,
+            linear-gradient(to bottom, black 3px, transparent 3px) 100% 0,
+            linear-gradient(to top, black 3px, transparent 3px) 0 100%,
+            linear-gradient(to top, black 3px, transparent 3px) 100% 100%;
+
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+    } 
+
+        .widget {
+            padding: 5px 5px ;
+            color: #000000;
+            max-width: 95%;
+            margin: auto;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction: column;
+            /* border: 3px solid #852c2c; */
+            /* border-radius: 5px; */
+            /* box-shadow: 2px 2px 1px 0px #4e4e4e; */
+        }
+        .frase {
+            text-align: center;
+            font-variant-caps: petite-caps;
+            font-size: 1.3em;
+            padding-top: 17px;            
+        }
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 50px;
+            /* grid-auto-columns: 300px; */
+            text-align: center;
+            line-height: 1.2em;
+
+        }
+           
+        .greet{
+            font-size: 2.7em;
+            line-height: 0.7em;
+            font-family: monospace;
+      
+        }
+
+        .date {
+      
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        .clock {
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        .time {
+            display: inline-block;
+            min-width: 20px;
+        }
+
+        .colon {
+            font-size: 1em;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container>">
+    <div class="widget">
+        <div class = "wrapper">
+            <div class="date" id="date"></div>
+            <div class="greet" id="greet"></div>
+            <div class="clock">
+                <div class="time" id="hour"></div>
+                <div class="colon">:</div>
+                <div class="time" id="min"></div>
+                <!-- <div class="colon">:</div>
+                <div class="time" id="sec"></div> -->
+            </div>
+        </div>
+        <div class="frase" id="frase"></div>
+    </div>
+</div>
+        
+<script>
+
+function dispalyGreetings(today){
+        hrs = today.getHours();
+        name="Weslley!"
+        if (hrs < 12)
+            greet = 'Bom Dia  '+name;
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Boa Tarde  '+name;
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Boa Noite  '+name;
+        document.getElementById('greet').innerHTML = greet;
+
+    }
+
+    function dispalyDate(today) {  
+       
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        // const days = ['Dom','Seg','Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "July", "August", "Sep", "Oct", "Nov", "Dec"
+];
+
+        var dayName = days[today.getDay()];
+        var monthName = monthNames[today.getMonth()];
+        var date = today.getDate();
+        var year = today.getFullYear();
+        document.getElementById('date').innerHTML =dayName+", "+date+"/"+monthName+"/"+year;
+
+    }
+
+
+    function dispalyClock(today) {
+
+        var hour = padZeros(twelveHour(today.getHours()));
+        var minutes = padZeros(today.getMinutes());
+        // var seconds = padZeros(today.getSeconds());
+       
+        if(today.getHours() >=12){
+            minutes+=" pm"
+        }
+        else{
+            minutes+=" am"
+        }
+       
+        document.getElementById('hour').innerHTML = hour;
+        document.getElementById('min').innerHTML = minutes;
+        // document.getElementById('sec').innerHTML = seconds;
+    }
+
+    function twelveHour(hour) {
+        if (hour > 12) {
+            return hour -= 12
+        } else if (hour === 0) {
+            return hour = 12;
+        } else {
+            return hour
+        }
+    }
+    function padZeros(num) {
+        if (num < 10) {
+            num = '0' + num
+        };
+        return num;
+    }
+
+    function dispalyWidget() {
+        var today = new Date();
+        dispalyGreetings(today);
+        dispalyDate(today);
+        dispalyClock(today);
+        setTimeout(dispalyWidget, 500);
+    }
+
+    dispalyWidget()
+
+
+
+quotes=[
+"Learning, like success, is anything but a linear process",
+"I am in competition with no one. I have no desire to play the game of being better than anyone. I am simply trying to be better than the person I was yesterday.",
+"If you want to be interesting, you have to be interested.",
+"It's supposed to be hard. If it were easy, everyone would do it.",
+"Don’t worry if you’re not where you want to be yet. Great things take time. ",
+"If it's important you'll find a way. If it's not, you'll find an excuse.",
+"Most people overestimate what they can do in one year and underestimate what they can do in ten years.",
+"A goal without a plan is just a wish.",
+"change your 24 hours and you'll change your life",
+"Stop thinking you are not qualified, not fit, or not experienced enough,",
+"Growth takes place when you start doing stuff you are not qualified to do.",
+"Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.",
+"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.",
+];
+
+const INTERVAL = 86400000;
+
+function dispalyQuote(){
+
+    document.getElementById('frase').innerHTML =quotes[0];
+    quotes.forEach((quote, i) => {
+        setTimeout(() => {
+            document.getElementById('frase').innerHTML =quote;
+        }, i * INTERVAL);  
+    });
+    }
+
+    function displayFrase() {
+        dispalyQuote();
+        setTimeout(displayFrase, quotes.length*INTERVAL);
+    }
+    displayFrase()
+
+</script>
+
+</body>
+</html>
