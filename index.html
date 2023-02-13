@@ -8,11 +8,12 @@
     <style>
         body{
             font-variant-caps: all-petite-caps;
+/*             background-color:gray; */
         }
         
         div .widget  {
-        width: 100%;
-        min-height: 80px;
+        width: 95%;
+        min-height: 70px;
         background:
             linear-gradient(to right, #fff 3px, transparent 3px) 0 0,
             linear-gradient(to right, #fff 3px, transparent 3px) 0 100%,
@@ -28,7 +29,7 @@
     } 
 
         .widget {
-            padding: 5px 5px ;
+            padding: 5px 14px ;
             color: #fff;
             max-width: 95%;
             margin: auto;
@@ -36,7 +37,8 @@
             justify-content:center;
             align-items:center;
             flex-direction: column;
-            line-height: 1.4em;
+            line-height: 1.5em;
+            
       
         }
 
@@ -44,32 +46,33 @@
             text-align: center;
             font-variant-caps: petite-caps;
             font-size: 2em;
-            padding: 20px 0;            
+            padding: 30px 0 15px 0;            
         }
         .wrapper{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-auto-rows: 50px;
+            /* font-size: 1em; */
         }
            
         .greet{
-            font-size: 3em;
+            font-size: 2.5em;
             line-height: 0.7em;
-            height: 80%;            
+            height: 90%;            
             text-align: center;
 
         }
 
         .date {
             font-family: monospace;
-            font-size: 3em;
+            font-size: 2em;
             height: 10%;
             text-align: left;
         }
         
         .clock {
             font-family: monospace;
-            font-size: 3em;
+            font-size: 2em;
             height: 10%;
             text-align: right;
         }
@@ -109,13 +112,13 @@
 
 function dispalyGreetings(today){
         hrs = today.getHours();
-        name="Weslley!"
+        name="Olá Weslley, "
         if (hrs < 12)
-            greet = 'Bom Dia  '+name;
+            greet = name+'  Bom Dia!';
         else if (hrs >= 12 && hrs <= 17)
-            greet = 'Boa Tarde  '+name;
+            greet = name+'  Boa Tarde!';
         else if (hrs >= 17 && hrs <= 24)
-            greet = 'Boa Noite  '+name;
+            greet = name+'  Boa Noite!';
         document.getElementById('greet').innerHTML = greet;
 
     }
