@@ -182,9 +182,9 @@ function dispalyGreetings(today){
 
 quotes=[
 "Três coisa que eu não posso perder: TEMPO, FÉ E OPORTUNIDADE",
-"O Segredo da vida é: Vaca não da Leite!",
-"If you want to be interesting, you have to be interested.",
-"It's supposed to be hard. If it were easy, everyone would do it.",
+"O Segredo da vida é: 'Vaca não da Leite!'",
+"A distância entre o sonho e a realidade chama-se disciplina.",
+"Poderás viver, então, do trabalho de tuas mãos, serás feliz e terás bem-estar.",
 "Don’t worry if you’re not where you want to be yet. Great things take time. ",
 "If it's important you'll find a way. If it's not, you'll find an excuse.",
 "Most people overestimate what they can do in one year and underestimate what they can do in ten years.",
@@ -196,11 +196,10 @@ quotes=[
 "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.",
 ];
 
-const INTERVAL = 86400000;
+const INTERVAL = 300;
 
 function dispalyQuote(){
-
-    document.getElementById('frase').innerHTML =quotes[0];
+    document.getElementById('frase').innerHTML =quotes[Math.floor(Math.random() * 12)];
     quotes.forEach((quote, i) => {
         setTimeout(() => {
             document.getElementById('frase').innerHTML =quote;
