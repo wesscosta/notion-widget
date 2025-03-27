@@ -12,6 +12,7 @@ body {
   font-family: Arial, sans-serif;
   font-variant-caps: all-petite-caps;
   transition: background 0.3s, color 0.3s;
+  overflow: hidden;
 }
 
 /* Definições de tema */
@@ -28,6 +29,7 @@ body.dark-mode {
 /* Estilização do Widget */
 .widget {
   width: 100%;
+  min-height: 100px;
   margin: 0 auto;
   padding: 5px 15px;
   text-align: center;
@@ -88,7 +90,7 @@ justify-content: center;
 }
 
 .frase {
-  font-size: 2em;
+  font-size: 1.8em;
   font-style: italic;
   margin-top: 10px;
   line-height: 1.1em;
