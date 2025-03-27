@@ -28,10 +28,10 @@ body.dark-mode {
 
 /* Estilização do Widget */
 .widget {
-  width: 100%;
+  width: 99%;
   min-height: 100px;
   margin: 0 auto;
-  padding: 5px 15px;
+  padding: 5px;
   text-align: center;
   transition: all 0.3s ease-in-out;
   display: flex;
