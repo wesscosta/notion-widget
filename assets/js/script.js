@@ -1,3 +1,5 @@
+import { generateRandomQuote } from './frases.js';
+
 // Função para exibir saudação com base na hora do dia
 function displayGreeting(today) {
     const name = "Weslley!";
@@ -61,19 +63,7 @@ function padZeros(num) {
 }
 
 // Função para pegar e mostrar uma frase aleatória
-async function generateRandomQuote() {
-    try {
-        // Obtém as citações de um arquivo JSON
-        const response = await fetch('frases.json');
-        const data = await response.json();
-
-        // Seleciona uma citação aleatória
-        const randomIndex = Math.floor(Math.random() * data.quotes.length);
-        document.getElementById("quote-text").textContent = data.quotes[randomIndex];
-    } catch (error) {
-        console.error('Erro ao buscar citação:', error);
-    }
-}
+generateRandomQuote();
 
 
 // Função para atualizar o widget a cada minuto
