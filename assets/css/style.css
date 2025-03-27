@@ -27,9 +27,9 @@ body.dark-mode {
 
 /* Estilização do Widget */
 .widget {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  padding: 5px;
+  padding: 5px 15px;
   text-align: center;
   transition: all 0.3s ease-in-out;
   display: flex;
@@ -90,8 +90,8 @@ justify-content: center;
 .frase {
   font-size: 2em;
   font-style: italic;
-  margin-top: 20px;
-  line-height: 1.1;
+  margin-top: 10px;
+  line-height: 1.1em;
 }
 
 .wrapper {
