@@ -28,7 +28,7 @@ body.dark-mode {
 /* Estilização do Widget */
 .widget {
   width: 95%;
-  min-height: 100px;
+  min-height: 80px;
   margin: 20px auto;
   padding: 20px;
   text-align: center;
