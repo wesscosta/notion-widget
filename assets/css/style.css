@@ -72,6 +72,12 @@ justify-content: center;
 }
 
 /* Estilos para elementos internos */
+.text-clock{
+  font-family: monospace;
+  font-size: 1.68em;
+  margin: 8px 0;
+}
+
 .greet {
   font-size: 1.5em;
   font-weight: bold;
@@ -79,20 +85,14 @@ justify-content: center;
   margin-bottom: 10px;
 }
 
-.text-clock{
-  font-family: monospace;
-  font-size: 1.5em;
-  margin: 8px 0;
-}
-
 .time {
   text-align: right;
 }
 
 .frase {
-  font-size: 1.9em;
+  font-size: 1.8em;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 2px;
   line-height: 1.2em;
   padding: 0 80px;
 }

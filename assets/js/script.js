@@ -2,7 +2,7 @@ import { generateRandomQuote } from './frases.js';
 
 // Função para exibir saudação com base na hora do dia
 function displayGreeting(today) {
-    const name = "Weslley!";
+    const name = "";
     const hours = today.getHours();
     let greeting;
 
