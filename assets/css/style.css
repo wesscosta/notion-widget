@@ -28,8 +28,8 @@ body.dark-mode {
 
 /* Estilização do Widget */
 .widget {
-  width: 99%;
-  min-height: 100px;
+  width: 100%;
+  min-height: 200px;
   margin: 0 auto;
   padding: 5px;
   text-align: center;
@@ -90,10 +90,11 @@ justify-content: center;
 }
 
 .frase {
-  font-size: 1.8em;
+  font-size: 1.9em;
   font-style: italic;
   margin-top: 10px;
-  line-height: 1.1em;
+  line-height: 1.2em;
+  padding: 0 80px;
 }
 
 .wrapper {
